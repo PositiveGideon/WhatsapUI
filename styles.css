@@ -1,0 +1,226 @@
+body, ul, li, h1, h2, a{  /* reset the browser default */
+  margin: 0;
+  padding: 0;
+  font-family: tahoma;
+}
+p{
+  font-size: 18px;
+}
+header{
+  background-color: #F63232;
+  padding: 20px 0;
+  text-align:center;
+  position: fixed;   /*header will stay at the top always*/
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1; /* z-index brings things forward when it takes a positive value*/
+}
+header h1{
+  color: white;
+  border: 8px solid white;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 36px;  /*gives a curve at the corners of the border*/
+}
+.banner{
+  position: relative;
+}
+.banner img{
+  max-width: 100%;
+}
+.banner .welcome{
+  background:#FEB614;
+  color: white;  
+  padding: 30px;
+  font-size: 60px;
+  position: absolute;
+  left: 0;
+  top: 30%;  /* use percentage here so that the size of banner and welcome message will be 30% of the screen size*/
+} 
+.banner .welcome span{
+  font-size: 1.4em;
+}
+nav{
+  background: #F4F4F4;
+  /* padding 20 px means all round 20px */
+  padding: 20px;   
+  
+  position: sticky;
+  top: 106px;      /* position of the nav will become sticky, after the page has been scrolled from top for 106px*/
+  z-index: 1;
+}
+nav ul{
+  /* no wrap means do not wrap the nav li to the next line. all should be on the same line */
+  background-color:red;
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;  
+  max-width: 1200px;
+  margin: 0 auto; /* to centralize the nav li  */
+  text-align: center;
+  list-style-type: none;
+}
+nav li{
+  /* 25 means each will take 25% */
+  width: 25%; 
+  display: flex;
+  font-size: 24px;
+}  
+nav li a{    /* style the anchor tag */
+  text-decoration: none;
+  color: #4B4B4B;
+}
+nav li a:hover{
+  text-decoration: underline;
+}
+nav li a.join{
+  color: #F63232;
+}
+main{
+  max-width: 100%;
+  width: 1200px;   
+  margin: 80px auto;   /* 80px is for the top and bottom. auto is for left and right.  */
+  padding: 0 40px;   /* 0 is for top and bottom, 40px is for left and right */
+  box-sizing: border-box;  /* add padding to the total width, so that text doesnt go off the page */
+}
+
+article h2{
+  color: #F63232;
+  font-size: 48px;
+}
+article p{
+  line-height: 2em;  /*space between lines of text.  2em means it takes the font size of the p tag and multiplies it by 2 */
+  color: #4B4B4B;
+}
+article p::first-line{  /* pseudo elements has :: colon. here means style the first line differently   */
+  font-weight: bold;
+  font-size: 1.2em;
+  }
+
+.images{
+  text-align: center;
+  margin: 80px 0;
+  white-space: nowrap;
+}
+.images li{
+  display: inline-block;  
+  list-style-type: none;
+  width: 40%;
+  margin: 20px 5%;
+  position: relative;
+} 
+.images li:hover{
+  top: -4px;   /* move 4px upwards */
+}
+.images li img{
+  max-width: 100%;
+}
+section.join{
+  background: #F4F4F4;
+  text-align: center;
+  padding: 60px 20px;
+  color: #4B4B4B;
+}
+section.join h2{
+  font-size: 36px;
+}
+form input{
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 28px;
+  border: 4px solid white;
+}
+
+/*peudo classes; style elements when they are in a particular state like hover, focus, first child of a parent  */
+form input:focus{
+  border: 4px dashed #4B4B4B;
+  outline: none;
+}
+form input:valid{
+  border: 4px solid #71d300;
+}
+footer{
+  background: #F63232;
+  color: white;   
+  padding: 10px;
+  text-align: center;
+} 
+
+/* we can also style the first child of an element using pseudo classes */
+
+
+/* responsive styles */
+ 
+@media screen and (max-width: 1400px){
+
+  .banner .welcome{
+    font-size: 40px;
+  }
+
+}
+
+@media screen and (max-width: 960px){
+
+  .banner .welcome{
+    font-size: 28px;
+  }
+  nav li{
+    font-size: 18px;
+  }
+
+}
+
+@media screen and (max-width: 700px){
+
+  .banner .welcome{
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+  }
+  .banner .welcome br{
+    display: none;
+  }
+  .banner .welcome span{
+    font-size: 1em;
+  }
+  nav li{
+    font-size: 18px;
+  }
+  .images li{
+    width: 100%;
+    display: block;
+    margin: 20px auto;
+  }
+
+}
+
+@media screen and (max-width: 560px){
+
+  .banner .welcome{
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+  }
+  .banner .welcome br{
+    display: none;
+  }
+  .banner .welcome span{
+    font-size: 1em;
+  }
+  nav li{
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+  }
+  article h2{
+    font-size: 36px;
+  }
+  header, nav{
+    position: relative;
+    top: 0;
+  }
+   
+
+}
